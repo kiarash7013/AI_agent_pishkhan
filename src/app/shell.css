@@ -86,3 +86,4 @@ body{background:var(--shell-page)}
 .pagination{direction:ltr;justify-content:space-between}
 .pagination .page-size{order:2;flex:0 0 125px;direction:rtl;white-space:nowrap}
 .pagination-start{order:1;margin:0}
+.scenario-card,.scenario-card form,.history-entry{display:flex;flex-direction:column;gap:12px;padding:16px;min-inline-size:0}.history-entry{background:var(--card);border-radius:var(--radius-xl)}.history-entry>small{overflow-wrap:anywhere}.scenario-card details{padding-block:8px}.scenario-card summary{cursor:pointer}.scenario-card p{font-size:13px}.chart{min-inline-size:0}

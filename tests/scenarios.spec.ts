@@ -1,0 +1,20 @@
+import {test,expect} from '@playwright/test';
+test('customer lookup, guide, tracking and durable deletion',async({page})=>{
+ await page.goto('/');await page.getByRole('button',{name:'باز کردن دستیار هوشمند'}).click();
+ const d=page.getByRole('dialog');
+ await d.getByRole('button',{name:'اطلاعات مشتری مشاهده اطلاعات مجاز مشتری'}).click();
+ await d.getByLabel('شماره مشتری',{exact:true}).fill('123');await d.getByRole('button',{name:'بررسی مشتری',exact:true}).click();await expect(d.getByRole('alert')).toContainText('مشتری یافت نشد');
+ await d.getByLabel('شماره مشتری',{exact:true}).fill('۸۴۸۳۹۹۹۳');await d.getByRole('button',{name:'بررسی مشتری',exact:true}).click();
+ await expect(d.getByRole('status')).toContainText('سپرده کوتاه');
+ await d.getByRole('button',{name:'دریافت صورت‌حساب این مشتری'}).click();await expect(d.getByRole('combobox',{name:'حساب'})).toBeVisible();
+ await d.getByRole('button',{name:'دریافت صورت‌حساب',exact:true}).click();await expect(d.getByText('صورت‌حساب آماده است')).toBeVisible();
+ const history=JSON.parse(await page.evaluate(()=>localStorage.getItem('pishkhan-demo-history-v1'))||'[]');const id=history[0].id;
+ await d.getByRole('button',{name:'گفتگوی جدید'}).click();await d.getByRole('button',{name:'پیگیری درخواست بررسی آخرین وضعیت درخواست'}).click();
+ await d.getByLabel('شناسه درخواست').fill('unknown');await d.getByRole('button',{name:'بررسی وضعیت'}).click();await expect(d.getByRole('status')).toContainText('پیدا نشد');
+ await d.getByLabel('شناسه درخواست').fill(id);await d.getByRole('button',{name:'بررسی وضعیت'}).click();await expect(d.getByRole('status')).toContainText('صورت‌حساب آماده است');
+ await d.getByRole('button',{name:'گفتگوی جدید'}).click();await d.getByRole('button',{name:'راهنمای سامانه پیداکردن مسیر انجام کار'}).click();
+ await d.getByText('مدیریت گفتگوها',{exact:true}).click();await d.getByRole('button',{name:'باز کردن تاریخچه',exact:true}).click();
+ const row=d.locator('.history-entry').filter({hasText:id});await row.getByRole('button',{name:'حذف گفتگو',exact:true}).click();await row.getByRole('button',{name:'انصراف'}).click();await expect(row).toBeVisible();
+ await row.getByRole('button',{name:'حذف گفتگو',exact:true}).click();await row.getByRole('button',{name:'تأیید حذف',exact:true}).click();await expect(row).toHaveCount(0);
+ await page.reload();await page.getByRole('button',{name:'باز کردن دستیار هوشمند'}).click();await d.getByRole('button',{name:'تاریخچه گفتگوها'}).click();await expect(d.locator('.history-entry').filter({hasText:id})).toHaveCount(0);
+});

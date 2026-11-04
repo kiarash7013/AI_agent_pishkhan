@@ -27,7 +27,7 @@ test('full drawer flow, downloads, closing while loading, and history',async({pa
  await page.screenshot({path:'test-results/result-desktop.png'});
  const [excel]=await Promise.all([page.waitForEvent('download'),dialog.getByRole('button',{name:'دریافت Excel'}).click()]);expect(excel.suggestedFilename()).toMatch(/\.xlsx$/);await excel.saveAs('test-results/statement.xlsx');
  const [pdf]=await Promise.all([page.waitForEvent('download'),dialog.getByRole('button',{name:'دریافت PDF'}).click()]);expect(pdf.suggestedFilename()).toMatch(/\.pdf$/);await pdf.saveAs('test-results/statement.pdf');
- await dialog.getByRole('button',{name:'نموداری نمایش بده'}).click();await expect(dialog.locator('meter')).toHaveCount(2);
+ await dialog.getByRole('button',{name:'نموداری نمایش بده'}).click();await expect(dialog.locator('.chart canvas, .chart svg').first()).toBeVisible();
  await dialog.getByRole('button',{name:'تاریخچه گفتگوها'}).click();await expect(dialog.locator('.history-row')).toHaveCount(1);
  await dialog.getByRole('button',{name:'گفتگوی جدید'}).click();await expect(dialog.getByText('سلام، خوش آمدید')).toBeVisible();
  await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'باز کردن دستیار هوشمند'})).toBeFocused();

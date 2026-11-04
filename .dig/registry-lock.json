@@ -121,14 +121,14 @@
     "utils": {
       "version": "1.0.0",
       "registryUrl": "https://docs.digdesign.ir",
-      "installedAt": "2026-11-04T10:23:04.151Z",
+      "installedAt": "2026-11-04T12:25:23.566Z",
       "files": {
         "src/lib/utils.ts": "sha256:7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
       },
       "snapshot": {
         "version": "1.0.0",
         "path": ".dig/snapshots/utils/1.0.0",
-        "installedAt": "2026-11-04T10:23:04.151Z"
+        "installedAt": "2026-11-04T12:25:23.566Z"
       }
     },
     "slot": {
@@ -381,14 +381,14 @@
     "persian": {
       "version": "1.0.0",
       "registryUrl": "https://docs.digdesign.ir",
-      "installedAt": "2026-11-04T10:23:04.151Z",
+      "installedAt": "2026-11-04T12:25:23.566Z",
       "files": {
         "src/lib/persian.ts": "sha256:c17cc9bc9751c9699db361a54af210de3e802f53008e3f39ebdad6d3871eccb3"
       },
       "snapshot": {
         "version": "1.0.0",
         "path": ".dig/snapshots/persian/1.0.0",
-        "installedAt": "2026-11-04T10:23:04.151Z"
+        "installedAt": "2026-11-04T12:25:23.566Z"
       }
     },
     "interaction": {
@@ -402,6 +402,32 @@
         "version": "1.0.0",
         "path": ".dig/snapshots/interaction/1.0.0",
         "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "chart-presets": {
+      "version": "1.0.1",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T12:25:23.566Z",
+      "files": {
+        "src/components/ui/chart-presets.tsx": "sha256:e9a0bb60bde065d19fbae49deba56823b18ccf04ee097f70af944a456374288f"
+      },
+      "snapshot": {
+        "version": "1.0.1",
+        "path": ".dig/snapshots/chart-presets/1.0.1",
+        "installedAt": "2026-11-04T12:25:23.566Z"
+      }
+    },
+    "chart": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T12:25:23.566Z",
+      "files": {
+        "src/components/ui/chart.tsx": "sha256:aa8d67d9330c5049d83c5bbc3eb85d2e356d0cb1671fa02929dc30ad1f0073e2"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/chart/1.0.0",
+        "installedAt": "2026-11-04T12:25:23.566Z"
       }
     }
   }
