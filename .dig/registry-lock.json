@@ -1,0 +1,408 @@
+{
+  "components": {
+    "theme": {
+      "version": "1.1.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:22:09.600Z",
+      "files": {
+        "src/app/dig-theme.css": "sha256:9a4b7bc0644396ff2bd89da10f7a0639fba95a21cc694388182cde4828182746"
+      },
+      "snapshot": {
+        "version": "1.1.0",
+        "path": ".dig/snapshots/theme/1.1.0",
+        "installedAt": "2026-11-04T10:22:09.600Z"
+      }
+    },
+    "button": {
+      "version": "1.1.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/button.tsx": "sha256:3e7a493fc6414f20fa662a9a2eedaf8c6616bc31ef9ac2fb1c394beeb172f2db",
+        "src/components/ui/button-disabled-guard.tsx": "sha256:69509daae9bba0269017b0af9cb0f669cbc7bd32ded0b28859c336fd9f1e77ba"
+      },
+      "snapshot": {
+        "version": "1.1.0",
+        "path": ".dig/snapshots/button/1.1.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "sheet": {
+      "version": "1.0.1",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/sheet.tsx": "sha256:8cca596d5acb2c1ed15779c274403793af317ea76894892d844b7335b551a0b0"
+      },
+      "snapshot": {
+        "version": "1.0.1",
+        "path": ".dig/snapshots/sheet/1.0.1",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "prompt-input": {
+      "version": "1.0.2",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/prompt-input.tsx": "sha256:ace4b5947e9ac89f31ec898a0ebfa3ee6b31c057410c05bcd600464ea89dafe3"
+      },
+      "snapshot": {
+        "version": "1.0.2",
+        "path": ".dig/snapshots/prompt-input/1.0.2",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "select": {
+      "version": "1.0.1",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/select.tsx": "sha256:50433ecd81739bab519a145719a80ef8ef4969617dd2b46ccd4e4189bc74e542"
+      },
+      "snapshot": {
+        "version": "1.0.1",
+        "path": ".dig/snapshots/select/1.0.1",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "text-field": {
+      "version": "1.0.1",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/text-field.tsx": "sha256:c6295e552b8ef1b1305c61b31486c2d8428cc5fa584dadf2d42966e96ae07227"
+      },
+      "snapshot": {
+        "version": "1.0.1",
+        "path": ".dig/snapshots/text-field/1.0.1",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "control-size": {
+      "version": "1.1.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/control-size.tsx": "sha256:772618fd566482c4500da874bbb579890abf52890e61aae240b73e58b9c4de75"
+      },
+      "snapshot": {
+        "version": "1.1.0",
+        "path": ".dig/snapshots/control-size/1.1.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "card": {
+      "version": "1.1.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/card.tsx": "sha256:9aaa2adb6ee1de46d33f0f7726a0214ba4fa84ad42edd2a64f155b8a8de828f0"
+      },
+      "snapshot": {
+        "version": "1.1.0",
+        "path": ".dig/snapshots/card/1.1.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "thinking": {
+      "version": "1.1.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/thinking.tsx": "sha256:9ff841af7fcec56fc7f6949bd2647315d39e8be98ebcbe02f18d7c91a784b534"
+      },
+      "snapshot": {
+        "version": "1.1.0",
+        "path": ".dig/snapshots/thinking/1.1.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "utils": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/utils.ts": "sha256:7c8c3dfc0cdd370d44932828eb067ef771c8fe7996693221d5d4b90af6d54f2d"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/utils/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "slot": {
+      "version": "1.0.1",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/slot.tsx": "sha256:7306518953cccfad7374123adf6b1d06179e28c90233e9c99a6ac44062e745dd"
+      },
+      "snapshot": {
+        "version": "1.0.1",
+        "path": ".dig/snapshots/slot/1.0.1",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "dialog": {
+      "version": "1.0.2",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/dialog.tsx": "sha256:25180beddca6befebef142c137a9779338353e3e26541ebb51641c04b2279fef"
+      },
+      "snapshot": {
+        "version": "1.0.2",
+        "path": ".dig/snapshots/dialog/1.0.2",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "icons": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/icons.tsx": "sha256:50d2ff9b7710b6453980cc36724fe3ebff47072e06783030862a8f7ef4f3b2b6"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/icons/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "use-dismissable-layer": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/use-dismissable-layer.ts": "sha256:111cc239adb5dcd42856f092615d45b4ffc060451c8189fe9c9a34ce9d5fa6b1"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/use-dismissable-layer/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "use-focus-trap": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/use-focus-trap.ts": "sha256:ae07004243ff6c16317ff88ff413dd1af93de2930653f28d862af374a45c3bb3"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/use-focus-trap/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "use-presence": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/use-presence.ts": "sha256:6ee777a35beac17063d012e3f2c722571cf4049965fc1489e76d6486c188ca9c"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/use-presence/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "use-scroll-lock": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/use-scroll-lock.ts": "sha256:0fef2624158c48fce349e68f6f6bd078a422ec7442665891c21133669872ad8b"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/use-scroll-lock/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "textarea": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/textarea.tsx": "sha256:9edf81c8b0a37c3ad5cad646723546134332344ea4162bc653cc14dc096a34fd"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/textarea/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "dropdown-menu": {
+      "version": "1.0.2",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/dropdown-menu.tsx": "sha256:a2d62687b4da622029905a99daa2ffa67c75cc4be9a7247d06bd0806869e8fdb"
+      },
+      "snapshot": {
+        "version": "1.0.2",
+        "path": ".dig/snapshots/dropdown-menu/1.0.2",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "badge": {
+      "version": "1.1.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/badge.tsx": "sha256:3f7d9aabc4641ee4ab58e9b4597bda1d914c68f51b69e92509c568d5c17fa779"
+      },
+      "snapshot": {
+        "version": "1.1.0",
+        "path": ".dig/snapshots/badge/1.1.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "checkbox": {
+      "version": "1.0.2",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/checkbox.tsx": "sha256:2def57e4661136ac34a98c3b6d6f7b594d29df856fa1ba8a42ad57145e709b2e"
+      },
+      "snapshot": {
+        "version": "1.0.2",
+        "path": ".dig/snapshots/checkbox/1.0.2",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "menu": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/menu.ts": "sha256:96f45ea6a27d5a120e04a7e6087a8aafd4172f1e7d73ccf5b4ebc21b231bf869"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/menu/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "portal": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/portal.tsx": "sha256:04e1f88a8abc6f50f9b6b9bcb52bff0180f342c3af3a1cec4232fe67a340576f"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/portal/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "positioning": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/positioning.ts": "sha256:e0f7087034136c685fa55168b9bf48f5a25bf157bd73174083e8f153fb2bf388"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/positioning/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "use-floating-position": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/use-floating-position.ts": "sha256:7f5dafe23ff7b51587c9c3d49b46d2d7604aecb58a8810f6c143f5f657f5b819"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/use-floating-position/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "use-controllable-state": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/use-controllable-state.ts": "sha256:48d0a59bf45c0c343a498e6702001beda93060c13a827a570430bb3775b8b699"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/use-controllable-state/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "input": {
+      "version": "1.0.1",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/input.tsx": "sha256:2c113b8874dbad977f700dbe1ae7ec559695565911408e871b22e8b97d2fb129"
+      },
+      "snapshot": {
+        "version": "1.0.1",
+        "path": ".dig/snapshots/input/1.0.1",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "label": {
+      "version": "1.0.1",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/label.tsx": "sha256:3558d80b2e8f47f2296c17205b6456e302f2921d85e744b46fb92af1e9878eb2"
+      },
+      "snapshot": {
+        "version": "1.0.1",
+        "path": ".dig/snapshots/label/1.0.1",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "collapsible": {
+      "version": "1.0.1",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/components/ui/collapsible.tsx": "sha256:3a1952d3893a7118a9a5e353493e234cea471a6fff44a1b2325742d841017139"
+      },
+      "snapshot": {
+        "version": "1.0.1",
+        "path": ".dig/snapshots/collapsible/1.0.1",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "persian": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/persian.ts": "sha256:c17cc9bc9751c9699db361a54af210de3e802f53008e3f39ebdad6d3871eccb3"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/persian/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    },
+    "interaction": {
+      "version": "1.0.0",
+      "registryUrl": "https://docs.digdesign.ir",
+      "installedAt": "2026-11-04T10:23:04.151Z",
+      "files": {
+        "src/lib/primitives/interaction.ts": "sha256:9ab018442b7d369264da850027b08d898ab8e15e5e56983737d5539aa469ff96"
+      },
+      "snapshot": {
+        "version": "1.0.0",
+        "path": ".dig/snapshots/interaction/1.0.0",
+        "installedAt": "2026-11-04T10:23:04.151Z"
+      }
+    }
+  }
+}
