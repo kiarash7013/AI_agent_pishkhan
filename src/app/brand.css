@@ -18,3 +18,35 @@
   --primary-foreground: var(--dig-black);
 }
 :root{--font-anchor:var(--font-iransans),"IRANSansX";--radius-xl:14px;--motion-enter:320ms;--motion-exit:240ms;--motion-content:180ms;--motion-ease:cubic-bezier(.2,.8,.2,1)}
+
+/* Values read from the branch-desk Figma; product overrides over Dig. */
+:root{
+ --shell-page:#eef0f8;
+ --shell-sidebar-start:#2e3743;
+ --shell-sidebar-end:#192227;
+ --shell-sidebar-header:#20262e;
+ --shell-menu-text:rgba(255,255,255,.7);
+ --shell-menu-active:rgba(0,0,0,.2);
+ --shell-search-background:rgba(0,0,0,.15);
+ --shell-search-text:rgba(255,255,255,.2);
+ --shell-sidebar-footer:rgba(255,255,255,.06);
+ --shell-text:#2a2a2a;
+ --shell-text-secondary:#5d5f69;
+ --shell-table-heading:#f8f8f9;
+ --shell-table-divider:#e5e5e7;
+ --shell-filter-background:rgba(0,0,0,.1);
+ --shell-footer-text:#909090;
+ --shell-critical:#e03e1a;
+ --shell-status-closed:#f4f4f5;
+ --shell-status-active:rgba(67,168,36,.08);
+ --shell-status-active-text:#2c6d17;
+ --shell-status-removed:rgba(241,56,14,.05);
+ --shell-status-removed-text:#9d2409;
+ --shell-status-blue:rgba(72,164,234,.1);
+ --shell-status-blue-text:#2f6b98;
+ --shell-sidebar-width:260px;
+ --shell-menu-padding:16px;
+ --font-brand-display:var(--font-pinar),var(--font-anchor);
+}
+
+:root{--shell-primary-subtle:#f0f8ff}

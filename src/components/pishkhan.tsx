@@ -13,6 +13,9 @@ import { ControlSizeProvider } from '@/components/ui/control-size';
 import { Card } from '@/components/ui/card';
 import { getSupabase } from '../lib/supabase';
 import { exportExcel, exportPdf } from '../lib/export';
+import { CasePage } from './case-page';
+import { normalizeArabicChars } from '../lib/persian';
+const menuSearchKey = (value: string) => normalizeArabicChars(value).replace(/[\u200c\s]+/g, ' ').trim();
 
 function Button({className='',...props}:React.ComponentProps<typeof DigButton>){return <DigButton variant={className.includes('outline')?'outline':className.includes('primary')?'default':'ghost'} {...props} className={className}/>;}
 const asset = (file: string) => `/assets/${file}`;
@@ -20,7 +23,6 @@ function Icon({file, className=''}:{file:string;className?:string}) { return <im
 function HistoryIcon(){return <span className="history-icon"><Icon file="4422c.svg"/><Icon file="20411.svg" className="history-hand"/></span>;}
 function IconButton({label,onClick,children,disabled=false}:{label:string;onClick:()=>void;children:React.ReactNode;disabled?:boolean}) { return <Button type="button" className="icon-button" aria-label={label} title={label} onClick={onClick} disabled={disabled}>{children}</Button>; }
 function Identity() { return <div className="identity" dir="ltr"><Icon file="691cd.svg"/><span>دستیار هوشمند</span></div>; }
-const titles = ['الزام خوانده به تنظیم سند رسمی ملک','مطالبه خسارت ناشی از نقض قرارداد','الزام به تحویل مورد معامله','استرداد وجه پرداختی بابت قرارداد','ابطال سند رسمی انتقال مالکیت','رفع تصرف عدوانی از ملک','تقسیم و فروش ترکه متوفی','تخلیه فوری ملک تجاری','فسخ قرارداد فروش ملک','مطالبه وجه قرارداد'];
 const nav = [ ['صفحه اصلی','1dfe5.svg'],['اطلاعات پایه','9de45.svg'],['پرونده دعاوی','09456.svg'],['نوع پرونده','771da.svg'],['پرونده اجرایی ثبتی','87bc4.svg'],['اشخاص مرتبط','d150d.svg'],['وکلا','b5f85.svg'],['برون‌سپاری','08fed.svg'],['اظهارنامه','b0a0f.svg'],['ارجاع گروهی','b4e70.svg'] ];
 const suggestions = [
  {title:'اطلاعات مشتری',description:'مشاهده اطلاعات مجاز مشتری',icon:'84304.svg',color:'blue',prompt:'اطلاعات مشتری'},
@@ -134,25 +136,19 @@ export function Pishkhan(){
  return <ControlSizeProvider size="default"><Sheet open={open} onOpenChange={setOpen}>
   <div className="workspace" inert={open}>
    <aside className="sidebar">
-    <div className="brand"><Icon file="62df7.svg"/><Icon file="d4ab8.svg"/></div>
-    <div className="menu-search"><span>⌕</span><Input aria-label="جستجوی منو" placeholder="جستجو" onChange={e=>setQuery(e.target.value)}/></div>
-    <nav aria-label="منوی اصلی">{nav.filter(([label])=>label.includes(query)).map(([label,icon],i)=><Button key={label} className={label==='پرونده دعاوی'?'selected':''} onClick={()=>label==='پرونده دعاوی'?setQuery(''):setNotice('در این نسخه، فلو دستیار و صورت‌حساب قابل آزمایش است.')}><span className="nav-icon"><Icon file={icon}/></span>{label}</Button>)}</nav>
-    <div className="sidebar-bottom"><Icon file="da15e.svg"/><small>نسخه ۱.۰.۱</small><div className="datetime"><span><Icon file="3d6eb.svg"/>۱۴ : ۴۵ : ۵۸</span><span><Icon file="1787f.svg"/>۱۴۰۴/۰۶/۲۳</span></div></div>
+    <div className="brand"><span className="brand-mark"><Icon file="62df7.svg"/></span><Icon file="d4ab8.svg"/></div>
+    <div className="menu-search"><Icon file="37099.svg"/><Input aria-label="جستجوی منو" placeholder="جستجو" value={query} autoComplete="off" onChange={e=>setQuery(e.target.value)}/></div>
+    <nav aria-label="منوی اصلی">{nav.filter(([label])=>menuSearchKey(label).includes(menuSearchKey(query))).map(([label,icon])=><Button key={label} className={`menu-item ${label==='پرونده دعاوی'?'selected':''}`} aria-current={label==='پرونده دعاوی'?'page':undefined} onClick={()=>label==='پرونده دعاوی'?setQuery(''):setNotice('در این نسخه، فلو دستیار و صورت‌حساب قابل آزمایش است.')}><span className="nav-icon"><Icon file={icon}/></span><span className="menu-label">{label}</span></Button>)}{!nav.some(([label])=>menuSearchKey(label).includes(menuSearchKey(query)))&&<p className="menu-search-empty" role="status">موردی پیدا نشد</p>}</nav>
+    <div className="sidebar-bottom"><div className="sidebar-emblem"><Icon file="da15e.svg"/><small>نسخه ۱.۰.۱</small></div><div className="datetime" dir="ltr"><span><Icon file="1787f.svg"/><bdi dir="rtl">۱۴۰۴/۰۶/۲۳</bdi></span><span><Icon file="3d6eb.svg"/><bdi dir="rtl">۵۸ : ۴۵ : ۱۴</bdi></span></div></div>
    </aside>
    <div className="main-shell">
     <header className="app-header" dir="ltr">
-     <Button className="profile" onClick={()=>{setOpen(true);setView(session?'history':'login');}}><span>⌄</span><span dir="rtl"><strong>کیارش فرازی</strong><small>{session?'حساب متصل':'کارشناس پشتیبانی پرداخت'}</small></span><img src={asset('b7c55.png')} alt="تصویر پروفایل" width="38" height="38"/></Button>
-     <div className="header-actions"><IconButton label="گفتگو" onClick={()=>{setOpen(true);setView('chat');}}><Icon file="0e21b.svg"/></IconButton><span className="header-divider"/><Button ref={trigger} className="icon-button assistant-trigger" aria-label="باز کردن دستیار هوشمند" aria-haspopup="dialog" aria-expanded={open} onClick={()=>{setOpen(true);setView('chat');}}><Icon file="c921e.svg"/></Button><span className="header-divider"/><IconButton label="تمام صفحه" onClick={()=>{if(document.fullscreenElement)void document.exitFullscreen();else void document.documentElement.requestFullscreen().catch(()=>setNotice('مرورگر از تمام‌صفحه پشتیبانی نمی‌کند.'));}}><Icon file="989c7.svg"/></IconButton><IconButton label="اعلان‌ها" onClick={()=>setNotice('اعلان جدیدی ندارید.')}><Icon file="f5dbc.svg"/></IconButton></div>
+     <Button className="profile" onClick={()=>{setOpen(true);setView(session?'history':'login');}}><Icon file="e9aa7.svg" className="profile-chevron"/><span className="profile-details"><span className="profile-copy" dir="rtl"><strong>کیارش فرازی</strong><small>{session?'حساب متصل':'کارشناس پشتیبانی پرداخت'}</small></span><img src={asset('b7c55.png')} alt="تصویر پروفایل" width="38" height="38"/></span></Button>
+     <div className="header-actions"><IconButton label="گفتگو" onClick={()=>{setOpen(true);setView('chat');}}><Icon file="0e21b.svg"/></IconButton><Button ref={trigger} className="icon-button assistant-trigger" aria-label="باز کردن دستیار هوشمند" aria-haspopup="dialog" aria-expanded={open} onClick={()=>{setOpen(true);setView('chat');}}><Icon file="c921e.svg"/></Button></div>
      <div className="system-name" dir="rtl"><Icon file="9b1dc.svg"/><strong>سامانه حقوقی</strong><Icon file="e9aa7.svg"/></div>
     </header>
-    <main className="case-page">
-     <div className="page-title"><h1>پرونده دعاوی</h1><span className="demo-badge">نسخه نمایشی · داده نمونه</span></div>
-     <div className="breadcrumb">صفحه اصلی <span>‹</span> پرونده دعاوی</div>
-     <div className="toolbar"><Button className="outline" onClick={()=>setNotice('جستجوی پرونده خارج از فلو این نسخه است.')}><span>⌕</span> جستجو پرونده</Button></div>
-     <div className="filters"><Icon file="d7ebc.svg"/>{['پرونده دعاوی: همه','شماره پرونده: ۳۱','کلاسه داخلی: ۱۱','وضعیت: همه'].map(s=><span key={s}>{s}</span>)}</div>
-     <div className="table-card"><div className="table-overflow"><table className="cases"><thead><tr>{['#','عنوان پرونده','شماره پرونده','پرونده دعاوی','کلاسه داخلی','نوع پرونده','وضعیت','عملیات'].map(s=><th key={s}>{s!=='#'&&<Icon file="06771.svg"/>}{s}</th>)}</tr></thead><tbody>{titles.map((title,i)=><tr key={title}><td>{fa(i+1)}</td><td>{title}</td><td>{fa([83174629,59420871,72691538,41837065,96554173,63719682,28576314,75148620,39642751,81493567][i])}</td><td>{['حقوقی','حقوقی','کیفری','تعزیرات','کیفری','تعزیرات','اداره کار','اداره کار','اداره کار','اداره کار'][i]}</td><td>{fa(472918+i*32087)}</td><td>{i%2?'کیفری':'حقوقی'}</td><td><span className="status-pill">در جریان</span></td><td><Button aria-label={`مشاهده پرونده ${i+1}`} onClick={()=>setNotice('اطلاعات جدول صرفاً برای نمایش زمینه طراحی است.')}>•••</Button></td></tr>)}</tbody></table></div><div className="pagination"><span>نمایش ۱۰ تایی⌄</span><span>۱–۱۰ از ۱۰ مورد</span><Button disabled aria-label="صفحه قبل">‹</Button><Button className="current">۱</Button><Button disabled aria-label="صفحه بعد">›</Button></div></div>
-    </main>
-    <footer className="app-footer">© کلیه حقوق برای بانک پاسارگاد محفوظ است. <strong>داتین</strong> طراحی و پیاده‌سازی توسط داتین</footer>
+    <CasePage onNotice={setNotice}/>
+    <footer className="app-footer"><span>© کلیه حقوق برای بانک پاسارگاد محفوظ است.</span><Icon file="bd15f.svg"/><span>طراحی و پیاده سازی توسط داتیس آرین قشم (داتین)</span></footer>
    </div>
   </div>
   <SheetContent side="end" showCloseButton={false} className="assistant-sheet" dir="ltr">
